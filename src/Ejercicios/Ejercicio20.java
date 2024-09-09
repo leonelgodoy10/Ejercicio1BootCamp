@@ -3,24 +3,20 @@ package Ejercicios;
 public class Ejercicio20 {
     public static void main(String[] args) {
         int a = 153;
-        String numeroString = Integer.toString(a);
-        char[] digitos = numeroString.toCharArray();
-        int[] potencias = new int[digitos.length];
+        String s = String.valueOf(a);
         int sum = 0;
 
-        for (int i = 0; i < digitos.length; i++) {
-            int digito = Character.getNumericValue(digitos[i]);
-            potencias[i] = (int) Math.pow(digito,digitos.length);
-            System.out.println("Dígito: " + digito + ", Potencia: " + (i + 1) + ", Resultado: " + potencias[i]);
-            sum += potencias[i];
+        for (int i = 0; i < s.length(); i++) {
+            sum += (int) Math.pow(Character.getNumericValue(s.charAt(i)),s.length());
+            System.out.print("+"+(int) Math.pow(Character.getNumericValue(s.charAt(i)),s.length()));
         }
-        System.out.println("la suma de las potencias es : "+sum);
-
         if (sum == a) {
-            System.out.println("El numero "+a+" si es un Número Armstrong");
+            System.out.println(" = "+sum);
+            System.out.println("El número "+a+" Es un Número Armstrong");
         }
         else {
-            System.out.println("El numero "+a+" no es un Número Armstrong");
+            System.out.println(" = "+sum);
+            System.out.println("El número "+a+" No es un Número Armstrong");
         }
     }
 }
